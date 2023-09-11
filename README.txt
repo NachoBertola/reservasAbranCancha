@@ -29,7 +29,7 @@ Instrucciones de Instalación
 No se requiere ninguna instalación adicional para utilizar la aplicación, ya que está disponible en línea y alojada en Firebase Hosting.
 
 Configuración del Proyecto
-Luego de descargar el repositorio, es necesario realizar la configuración de los servicios de Firebase. Para esto, en el archivo firebaseConfigs.js se muestra una plantilla que se debe completar con las credenciales del proyecto. Además, se debe renombrar ese archivo a firebaseConfig.js para que funcionen las importaciones en los documentos HTML.
+Luego de descargar el repositorio, es necesario realizar la configuración de los servicios de Firebase. Para esto, en el archivo firebaseConfigExample.js se muestra una plantilla que se debe completar con las credenciales del proyecto. Además, se debe renombrar ese archivo a firebaseConfig.js para que funcionen las importaciones en los documentos HTML.
 
 Estado del Proyecto
 El proyecto se considera una versión estable (v1.0.0), lo que significa que todas las funcionalidades principales están implementadas y listas para su uso. La única funcionalidad que se encuentra en desarrollo es la de enviar notificaciones por correo electrónico, que se espera implementar en futuras actualizaciones.
