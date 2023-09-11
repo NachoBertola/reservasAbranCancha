@@ -1,0 +1,116 @@
+/* Estilos generales */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ajustamos la alineación vertical */
+    height: 100vh;
+    background-color: #f7faf9;
+}
+  
+h1 {
+    font-size: 32px;
+    color: #006e6d;
+    margin-bottom: 10px;
+    margin-top: 0; /* Reducimos el espacio superior */
+}
+  
+label {
+    font-size: 16px;
+    color: #006e6d;
+    margin-bottom: 5px;
+}
+
+#mensaje-email {
+    font-size: 16px;
+    color: #006e6d;
+    margin-right: 5px;
+}
+
+#arriba-izquierda {
+    display: flex;
+    align-items: center;
+}
+  
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+#arriba-derecha .btn-logout {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #006e6d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+#arriba-derecha .btn-logout:hover {
+    background-color: #004c4a;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #006e6d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+button:hover {
+    background-color: #004c4a;
+}
+  
+.boton-eliminar {
+    background: none;
+    border: none;
+    color: red;
+    padding: 0;
+    cursor: pointer;
+}
+  
+.boton-eliminar:hover {
+    background-color: transparent;
+}
+  
+#tabla-reservas {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+  
+#tabla-reservas th,
+#tabla-reservas td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+  
+#tabla-reservas tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+  
+#tabla-reservas tbody tr:hover {
+    background-color: #ddd;
+}
+  
+#tabla-reservas .boton-eliminar {
+    color: red;
+}
+  
+#tabla-reservas .boton-eliminar:hover {
+    background-color: transparent;
+    opacity: 0.7;
+}

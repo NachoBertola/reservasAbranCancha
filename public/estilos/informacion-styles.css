@@ -1,0 +1,72 @@
+.email {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+  
+.email p {
+    margin-right: 5px;
+}
+
+#arriba-derecha {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#arriba-izquierda {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#arriba-izquierda label {
+    position: fixed;
+    width: 100%;
+    max-width: 100px;
+    top: 14px;
+    left: 10px;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+label {
+    font-size: 16px;
+    color: #006e6d;
+    margin-bottom: 5px;
+}
+
+#arriba-derecha .btn-logout {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #006e6d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+#arriba-derecha .btn-logout:hover {
+    background-color: #004c4a;
+}
+
+#mensaje-email {
+    font-size: 16px;
+    color: #006e6d;
+    margin-right: 5px;
+}
+
+.section a {
+    text-decoration: none;
+}
+
+.section a:visited, .section a:link {
+    text-decoration: none;
+    color: #000;
+}

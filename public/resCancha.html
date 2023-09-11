@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Turnos F5</title>
+    <link rel="stylesheet" href="/estilos/general.css">
+    <link rel="stylesheet" href="/estilos/resCancha-styles.css">
+
+    <link rel="icon" href="/images/logo.jpg">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- para usar íconos -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="/scripts/firebaseConfig.js"></script>
+    <script src="/scripts/auth.js"></script>
+    <script src="/scripts/resCancha.js"></script>
+    <script>
+        $(function() {
+            const fechaMaxima = new Date();
+            fechaMaxima.setMonth(fechaMaxima.getMonth() + 4); // Agrega 4 meses a la fecha actual
+
+            $("#fecha").datepicker({
+                dateFormat: "dd/mm/yy",
+                minDate: 0, // Bloquea las fechas pasadas, solo se pueden seleccionar fechas futuras
+                maxDate: fechaMaxima // Bloquea las fechas después de 4 meses a partir de la fecha actual
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            obtenerUsuarioAutenticado();
+            cargarTurnosDisponibles();
+        });
+    </script>
+</head>
+<body>
+    <div class="arriba">
+        <div id="arriba-izquierda">
+            <input type="checkbox" id="check">
+            <label for="check" class="icon-menu"><i class="fas fa-bars"></i> Menú</label>
+            
+            <nav class="menu">
+                <p>Turnos F5</p>
+                <p onclick="dirigirSalon()">Salón de eventos</p>
+                <p onclick="dirigirNosotros()">Nosotros</p>
+                <p onclick="dirigirInformacion()">Información</p>
+            </nav>
+        </div>
+
+        <div id="arriba-derecha">
+            <p id="mensaje-email"></p>
+            <button type="button" class="btn-logout" onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </div>
+
+    
+    
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <div>
+            <label for="cancha">Cancha:</label>
+            <select id="cancha" required> <!-- Arreglar que haya que elegirlo si o si-->
+                <option value="techada">Techada</option>
+                <option value="abierta">Abierta</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="fecha">Fecha:</label>
+            <input type="text" id="fecha" onchange="cargarTurnosDisponibles()" required>
+        </div>
+        
+        <div>
+            <label for="hora">Hora:</label>
+            <select id="hora"></select>
+        </div>        
+        
+        <button type="button" onclick="cargarFormularioTurnos()">Cargar Turno</button>
+        <!--<p id="mensaje"></p>-->
+        <br>
+        <!-- <button type="button" onclick="traerInformacion()">Traer Información</button> -->
+    
+        <button type="button" id="btnMostrarTurnos" onclick="mostrarTurnosUsuario()">Mostrar Turnos &#9660;</button>
+        <table id="tabla-turnos" style="display: none;">
+            <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Cancha</th>
+                <th></th> <!-- Columna para el botón de eliminar -->
+            </tr>
+            </thead>
+            <tbody id="body-tabla-turnos">
+            <!-- Aquí se agregarán las filas dinámicamente -->
+            </tbody>
+        </table>
+    
+    </div>
+</body>
+</html>
+
+<!-- antes se llamaba paginaPrincipal -->

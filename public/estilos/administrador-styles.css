@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f7f6;
+}
+  
+h1 {
+    font-size: 28px;
+    text-align: center;
+    color: #006e6d;
+    margin-bottom: 20px;
+}
+  
+#arriba-derecha {
+    text-align: right;
+}
+  
+.botones {
+    background-color: #007f7e;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.botones:hover {
+    background-color: #004c4a;
+}
+  
+#tablas {
+    margin-top: 20px;
+}
+  
+label {
+    font-size: 18px;
+    color: #006e6d;
+    text-align: center;
+}
+  
+input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+}
+  
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+}
+  
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+}
+  
+table thead {
+    background-color: #e1f0ef;
+}
+  
+table th {
+    font-weight: bold;
+}
+  
+table tbody tr:hover {
+    background-color: #d6edeb;
+}
+  
+.boton-eliminar-icono {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+  
+.boton-eliminar-icono i {
+    color: #e10000;
+}
+  
+.boton-eliminar-icono:hover {
+    opacity: 0.7;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+  
+.input-wrapper label {
+    font-size: 18px;
+    color: #006e6d;
+    margin-right: 10px;
+}
+  
+.input-wrapper input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+.input-wrapper #fecha {
+    margin-left: 5px;
+}

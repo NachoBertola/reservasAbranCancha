@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abran Cancha - Información</title>
+
+    <link rel="icon" href="/images/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- para usar íconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+    <link rel="stylesheet" href="/estilos/general.css">
+    <link rel="stylesheet" href="/estilos/informacion-styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="/scripts/firebaseConfig.js"></script>
+    <script src="/scripts/auth.js"></script>
+    <script src="/scripts/informacion.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            obtenerUsuarioAutenticado();
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="arriba">
+        <div id="arriba-izquierda">
+            <input type="checkbox" id="check">
+            <label for="check" class="icon-menu"><i class="fas fa-bars"></i> Menú</label>
+            
+            <nav class="menu">
+                <p onclick="dirigirTurnos()">Turnos F5</p>
+                <p onclick="dirigirSalon()">Salón de eventos</p>
+                <p onclick="dirigirNosotros()">Nosotros</p>
+                <p>Información</p>
+            </nav>
+        </div>
+
+        <div id="arriba-derecha">
+            <p id="mensaje-email"></p>
+            <button type="button" class="btn-logout" onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <h1>Información</h1>
+        
+        <div class="section">
+            <h2>Condiciones de uso del salón de eventos</h2>
+            <ul>
+                <li>Horarios de reserva: Se pueden reservar turnos de 3 horas.</li>
+                <li>Capacidad: El salón tiene capacidad para un máximo de [especificar capacidad].</li>
+                <li>Restricciones: [Agregar restricciones o requisitos adicionales].</li>
+                <li>Normas de comportamiento: Se requiere un comportamiento respetuoso y responsable dentro del salón.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Condiciones de uso de las canchas de fútbol 5</h2>
+            <ul>
+                <li>Horarios de reserva: Los turnos de fútbol 5 tienen una duración de 1 hora.</li>
+                <li>Reglamento: Se debe jugar siguiendo las reglas establecidas para el fútbol 5.</li>
+                <li>Recomendaciones de uso: Utilizar botines de fútbol 5, no se permiten botines con tapones altos para proteger el césped sintético.</li>
+                <li>Normas de comportamiento: Se requiere un comportamiento deportivo y respetuoso durante el juego.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Contacto</h2>
+            <p>Dirección: *direccion*</p>
+            <p>Teléfono: *telefono*</p>
+            <p>Redes Sociales:
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/abrancanchafutbol" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            Instagram
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://www.facebook.com/Abran-Cancha">
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>Formas de Pago</h2>
+            <p>Aceptamos pagos en efectivo o transferencia bancaria:</p>
+            <ul>
+                <li>Alias: *alias*</li>
+                <li>CBU: *CBU*</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Política de Cancelación</h2>
+            <p>Los turnos de fútbol 5 deben ser cancelados con al menos 30 minutos de anticipación. Las reservas del salón deben ser canceladas con al menos 4 horas de anticipación.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Precios</h2>
+            <ul>
+                <li>Reserva del salón: $14,000</li>
+                <li>Reserva del salón con una cancha de fútbol 5: $17,000</li>
+                <li>Reserva del salón con las dos canchas de fútbol 5: $19,000</li>
+                <li>Turno de fútbol 5 (por jugador): $500</li>
+                <li>Gaseosa de litro y medio: $500</li>
+                <li>Cerveza: $700</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Horarios de Atención</h2>
+            <p>Puedes contactarnos en cualquier momento para realizar consultas o reservas.</p>
+        </div>
+    </div>
+</body>
+</html>

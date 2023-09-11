@@ -1,0 +1,111 @@
+body {
+  overflow: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ajustamos la alineación vertical */
+  height: auto;
+  background-color: #f7faf9;
+}
+
+h1 {
+  font-size: 32px;
+  color: #006e6d;
+  margin-bottom: 10px;
+  margin-top: 0; /* Reducimos el espacio superior */
+}
+
+label {
+  font-size: 16px;
+  color: #006e6d;
+  margin-bottom: 5px;
+}
+
+select,
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #006e6d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #004c4a;
+}
+
+#tabla-turnos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#tabla-turnos th,
+#tabla-turnos td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#arriba-izquierda {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#arriba-derecha {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#arriba-derecha .btn-logout {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #006e6d;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#arriba-derecha .btn-logout:hover {
+  background-color: #004c4a;
+}
+
+#mensaje-email {
+  font-size: 16px;
+  color: #006e6d;
+  margin-right: 5px;
+}
+
+.boton-eliminar {
+  background: none;
+  border: none;
+  color: red;
+  padding: 0;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  background-color: transparent; /* Quitamos el color de fondo en hover */
+  opacity: 0.7;
+}

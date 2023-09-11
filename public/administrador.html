@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abran Cancha - Administrador</title>
+
+    <!--<link rel="stylesheet" href="../estilos/general.css">-->
+    <link rel="stylesheet" href="./estilos/administrador-styles.css">
+
+    <link rel="icon" href="./images/logo.jpg">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- para usar íconos -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/scripts/administrador.js"></script>
+    <script src="./scripts/firebaseConfig.js"></script>
+    <script src="/scripts/auth.js"></script>
+
+    <script>
+        $(function() {
+            $("#fecha").datepicker({
+                dateFormat: "dd/mm/yy"
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin</h1>
+
+        <div id="arriba-derecha">
+            <button type="button" class="botones" onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="fecha">Fecha:</label>
+            <input type="text" id="fecha" onchange="cargarTurnosReservas()" required>
+        </div>
+
+        <div id="tablas">
+            <label for="tabla-turnos">Tabla de Reservas F5</label>
+            <table id="tabla-turnos" style="display: none;">
+                <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Cancha</th>
+                    <th></th> <!-- Columna para el botón de eliminar -->
+                </tr>
+                </thead>
+                <tbody id="body-tabla-turnos">
+                <!-- Aquí se agregarán las filas dinámicamente -->
+                </tbody>
+            </table><br>
+
+            <label for="tabla-reservas">Tabla de Reservas Salón de Eventos</label>
+            <table id="tabla-reservas" style="display: none;">
+                <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Cancha Abierta</th>
+                    <th>Cancha Techada</th>
+                    <th></th> <!-- Columna para el botón de eliminar -->
+                </tr>
+                </thead>
+                <tbody id="body-tabla-reservas">
+                <!-- Aquí se agregarán las filas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+        
+        <button class="botones" onclick="eliminarReservasPasadas()">Eliminar reservas pasadas</button>
+    </div>
+    
+</body>
+</html>
+
+<!-- ideas para armar la pagina:
+armar una tabla para las reservas del salon y otra para los turnos de f5. poner para elegir la fecha,
+y que en las tablas se muestren los documentos de ese dia. que se puedan borrar de a un turno o reserva,
+o todos con un solo boton. intentar hacer que, en cada tabla, las reservas se organicen por hora. -->

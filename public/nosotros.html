@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abran Cancha - Acerca de Nostros</title>
+
+    <link rel="icon" href="/images/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> <!-- para usar íconos -->
+    <link rel="stylesheet" href="/estilos/general.css">
+    <link rel="stylesheet" href="/estilos/nosotros-styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="/scripts/firebaseConfig.js"></script>
+    <script src="/scripts/auth.js"></script>
+    <script src="/scripts/nosotros.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            obtenerUsuarioAutenticado();
+        });
+    </script>
+</head>
+<body>
+    <div class="arriba">
+        <div id="arriba-izquierda">
+            <input type="checkbox" id="check">
+            <label for="check" class="icon-menu"><i class="fas fa-bars"></i> Menú</label>
+            
+            <nav class="menu">
+                    <p onclick="dirigirTurnos()">Turnos F5</p>
+                    <p onclick="dirigirSalon()">Salón de eventos</p>
+                    <p>Nosotros</p>
+                    <p onclick="dirigirInformacion()">Información</p>
+            </nav>
+        </div>
+
+        <div id="arriba-derecha">
+            <p id="mensaje-email"></p>
+            <button type="button" class="btn-logout" onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Nosotros</h1>
+        <div class="content">
+            <img id="logo" src="../images/logo.jpg" alt="Logo de Abran Cancha">
+
+            <div class="description">
+                <h2>¡Bienvenidos a Abran Cancha!</h2>
+                <p>Somos una empresa dedicada a brindar espacios de recreación y diversión para todos. Desde 2013, nos enfocamos en ofrecer a nuestra comunidad un lugar donde amigos y familias puedan disfrutar de momentos únicos.</p>
+
+                <h3>Nuestra Misión</h3>
+                <p>En Abran Cancha, nuestra misión es crear un ambiente acogedor y seguro donde las personas puedan disfrutar del deporte y pasar momentos inolvidables. Nos esforzamos por ofrecer instalaciones de calidad, servicios excelentes y precios accesibles.</p>
+
+                <h3>Nuestros Servicios</h3>
+                <ul>
+                    <li>Dos canchas de fútbol 5 para partidos emocionantes</li>
+                    <li>Salón de eventos para celebraciones especiales</li>
+                    <li>Parrillero para disfrutar de una deliciosa comida al aire libre</li>
+                    <li>Venta de bebidas refrescantes para hidratarse durante los juegos</li>
+                    <li>Estacionamiento para motos, brindando comodidad a nuestros clientes</li>
+                </ul>
+
+                <h3>Nuestros Valores</h3>
+                <p>En Abran Cancha, nos regimos por los valores de calidad, diversión, compromiso y calidez. Queremos que cada persona que nos visite se sienta bienvenida y disfrute de una experiencia extraordinaria.</p>
+
+                <h3>Nuestra Visión</h3>
+                <p>Seguiremos siendo un referente en nuestro sector, brindando espacios de esparcimiento y diversión para todos los amantes del fútbol y aquellos que buscan disfrutar de momentos inolvidables con sus seres queridos. Continuaremos innovando y mejorando nuestros servicios para seguir siendo el lugar preferido de la comunidad.</p>
+
+                <h3>¡Ven y conócenos!</h3>
+                <p>Estamos emocionados de poder brindarte un lugar donde puedas compartir buenos momentos, hacer ejercicio y vivir experiencias únicas. ¡Te esperamos en Abran Cancha!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
